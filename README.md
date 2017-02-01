@@ -3,6 +3,6 @@
 #Service Oriented Architecture (SOAP Web service)
 
 1. Service provider (ImageServiceProvider): Implemeted as ASP.NET - Web Services
-2. Client (ImageClient): Implemented as Windows From Application
+2. Client (ImageClient): Implemented as Windows From Application Visual C#
 
 IPC - through Proxy class.
