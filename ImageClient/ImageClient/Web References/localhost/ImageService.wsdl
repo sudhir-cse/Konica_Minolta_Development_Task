@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost:49191/imageService.asmx" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://localhost:49191/imageService.asmx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://localhost:49191/imageService.asmx">
+      <s:element name="toGrayScale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="toGrayScaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="toGrayScaleResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="toFlipImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="toFlipImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="toFlipImageResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="toFlipAndGrayscale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="toFlipAndGrayscaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="toFlipAndGrayscaleResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="toGrayScaleSoapIn">
+    <wsdl:part name="parameters" element="tns:toGrayScale" />
+  </wsdl:message>
+  <wsdl:message name="toGrayScaleSoapOut">
+    <wsdl:part name="parameters" element="tns:toGrayScaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="toFlipImageSoapIn">
+    <wsdl:part name="parameters" element="tns:toFlipImage" />
+  </wsdl:message>
+  <wsdl:message name="toFlipImageSoapOut">
+    <wsdl:part name="parameters" element="tns:toFlipImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="toFlipAndGrayscaleSoapIn">
+    <wsdl:part name="parameters" element="tns:toFlipAndGrayscale" />
+  </wsdl:message>
+  <wsdl:message name="toFlipAndGrayscaleSoapOut">
+    <wsdl:part name="parameters" element="tns:toFlipAndGrayscaleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ImageServiceSoap">
+    <wsdl:operation name="toGrayScale">
+      <wsdl:input message="tns:toGrayScaleSoapIn" />
+      <wsdl:output message="tns:toGrayScaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="toFlipImage">
+      <wsdl:input message="tns:toFlipImageSoapIn" />
+      <wsdl:output message="tns:toFlipImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="toFlipAndGrayscale">
+      <wsdl:input message="tns:toFlipAndGrayscaleSoapIn" />
+      <wsdl:output message="tns:toFlipAndGrayscaleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ImageServiceSoap" type="tns:ImageServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="toGrayScale">
+      <soap:operation soapAction="http://localhost:49191/imageService.asmx/toGrayScale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="toFlipImage">
+      <soap:operation soapAction="http://localhost:49191/imageService.asmx/toFlipImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="toFlipAndGrayscale">
+      <soap:operation soapAction="http://localhost:49191/imageService.asmx/toFlipAndGrayscale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ImageServiceSoap12" type="tns:ImageServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="toGrayScale">
+      <soap12:operation soapAction="http://localhost:49191/imageService.asmx/toGrayScale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="toFlipImage">
+      <soap12:operation soapAction="http://localhost:49191/imageService.asmx/toFlipImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="toFlipAndGrayscale">
+      <soap12:operation soapAction="http://localhost:49191/imageService.asmx/toFlipAndGrayscale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ImageService">
+    <wsdl:port name="ImageServiceSoap" binding="tns:ImageServiceSoap">
+      <soap:address location="http://localhost:49191/ImageService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ImageServiceSoap12" binding="tns:ImageServiceSoap12">
+      <soap12:address location="http://localhost:49191/ImageService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
